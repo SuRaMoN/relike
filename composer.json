@@ -1,7 +1,19 @@
 
 {
-    "autoload": {
-        "files": ["src/autoload.php"]
-    }
-} 
+	"name": "SuRaMoN/relike",
+	"description": "Like Regular Expressions, but for any data type",
+	"type": "library",
+	"homepage": "https://github.com/SuRaMoN/relike",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "SuRaMoN",
+			"homepage": "https://github.com/SuRaMoN"
+		}
+	],
+	"require": { "php": ">=5.3" },
+	"autoload": {
+		"files": [ "src/autoload.php" ]
+	}
+}
 
