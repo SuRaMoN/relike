@@ -19,9 +19,14 @@ class Relike
 	{
 		$this->searchAlgorithm = new DefaultSearchAlgorithm();
 		if(null === $matchAdapterFactory) {
-			$matchAdapterFactory = new AutoMatchAdapterFactory();
+			$matchAdapterFactory = $this->getDefaultMatchAdapterFactory();
 		}
 		$this->matchAdapterFactory = $matchAdapterFactory;
+	}
+
+	protected function getDefaultMatchAdapterFactory()
+	{
+		return new AutoMatchAdapterFactory();
 	}
 
 	public function tryFind($haystack, RePart $query, $offset = 0)

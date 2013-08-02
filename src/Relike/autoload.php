@@ -3,6 +3,7 @@
 spl_autoload_register(function ($className) {
 	$availableClasses = array(
 		'Relike\Relike',
+		'Relike\TokenArrayRelike',
 		'Relike\MatchResult',
 
 		'Relike\MatchAdapters\MatchAdapter',
