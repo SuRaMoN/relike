@@ -16,6 +16,19 @@ abstract class SearchAlgorithm
 	{
 	}
 
+	public function findAll(MatchAdapter $haystack, RePart $query, $offset)
+	{
+		$matches = array();
+		while(true) {
+			$matchResult = $this->tryFind($haystack, $query, $offset);
+			if(null === $matchResult) {
+				return $matches;
+			}
+			$matches[] = $matchResult;
+			$offset = $matchResult->getOffset() + max($matchResult->getLength(), 1);
+		}
+	}
+
 	public function findAllOffsets(MatchAdapter $haystack, RePart $query, $offset)
 	{
 		$offsets = array();
