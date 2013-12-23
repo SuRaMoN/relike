@@ -11,6 +11,9 @@ class TokenArrayAdapter extends ArrayAdapter
 
 	public function equals($identifier, $object)
 	{
+		if(is_string($identifier) && ! is_string($object)) {
+			$object = $object[self::STRING_CONTENT];
+		}
 		$object = is_string($object) ? $object : $object[self::TOKEN_INDEX];
 		return $identifier == $object;
 	}

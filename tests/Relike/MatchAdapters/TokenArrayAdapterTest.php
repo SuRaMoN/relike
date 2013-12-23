@@ -17,5 +17,14 @@ class TokenArrayAdapterTest extends PHPUnit_Framework_TestCase
 		$matchResult = $s->tryFind($tokens, $needle);
 		$this->assertEquals(5, count($matchResult->getMatch()));
 	}
+
+	/** @test */
+	public function testMatchingContent()
+	{
+		$tokens = token_get_all(file_get_contents(__FILE__));
+		$s = new TokenArrayRelike();
+		$needle = $s->sequence('testMatchingContent');
+		$this->assertCount(1, $s->findAll($tokens, $needle));
+	}
 }
 
