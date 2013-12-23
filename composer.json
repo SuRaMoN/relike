@@ -13,7 +13,9 @@
 	],
 	"require": { "php": ">=5.3" },
 	"autoload": {
-		"files": [ "src/autoload.php" ]
+        "psr-0": {
+			"Relike\\": "src/"
+		}
 	}
 }
 
